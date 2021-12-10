@@ -38,40 +38,64 @@ footer p{
     font-size: 20px;
 }
 
-
 .section{
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.section.three {
+	height: 800px;
+	padding-bottom: 100px;
+}
+
+.section::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.section.one::after{
+    background: url('images/spot-bg-01.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 780px;
-    display: flex;
-    justify-content: center;
+    transform-origin: top left;
+    transform: skewY(-4deg);
 }
 
-.block{
-    position: relative;
+/* .section.two::after{
+    background: #fff;
+    transform-origin: top left;
+    transform: skewY(-4deg);
+} */
+
+.section.three::after{
+    background: url('images/spot-bg-02.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform-origin: top;
+    transform: skewY(4deg);
 }
 
-.angle{
-    width: 100%;
-    height: 780px;
-    background-color: #333;
-    position: absolute;
+.section.four::after{
+    transform-origin: top;
+    transform: skewY(-4deg);
+    top: -17%;
+    background-color: #fff;
 }
 
-.angle.one{
-    transform: skewY(-8deg);
-}
 
-.section.one{
-    background-image: url('images/spot-bg-01.jpg');
-}
-
-.section.three{
-    background-image: url('images/spot-bg-02.jpg');
-}
-
-.section.circle{
+.circle{
     width: 600px;
     height: 600px;
     background-color: #fff;
@@ -82,17 +106,17 @@ footer p{
     justify-content: center;
 }
 
-.section.circle{
+.circle{
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.section.two .section.circle{
+.section.two .circle{
     background-image: url('images/img-01.jpg');
 }
 
-.section.four .section.circle{
+.section.four .circle{
     background-image: url('images/img-02.jpg');
 }
 
@@ -166,3 +190,164 @@ form {
 input:focus, textarea:focus {
 	outline: none;
 }
+
+@media only screen and (max-width: 1100px) {
+    .section {
+        height: 800px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+
+    .section .content p {
+        font-size: 18px;
+    }
+    button {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 35px;
+    }
+    .content {
+        padding: 40px 20px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .content {
+        padding: 20px 0;
+    } 
+  }
+
+  @media only screen and (max-width: 900px) {
+    .container {
+        display: block;
+    }
+
+    .section {
+        height: auto;
+    }
+
+    .section.three {
+        height: auto;
+        padding-bottom: inherit;
+    }
+
+    .section.four::after {
+        top: 10%;
+    }
+
+  }
+
+  @media only screen and (max-width: 700px) {
+    .circle {
+        width: 500px;
+        height: 500px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .circle {
+        width: 400px;
+        height: 400px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .section .content p {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    .section.three h1 {
+        font-size: 30px;
+    }
+
+    form input, textarea {
+        font-size: 16px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+  }
+
+
+  @media only screen and (max-width: 400px) {
+    .circle {
+        width: 350px;
+        height: 350px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .section .content p {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .section.three h1 {
+        font-size: 22px;
+    }
+
+    form input, textarea {
+        font-size: 14px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .circle {
+        width: 320px;
+        height: 320px;
+    }
+
+    .section .content p {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+      
+
+
+
+ 
